@@ -12,14 +12,14 @@ pipeline {
             steps {
                 // Крок для збірки проекту з Visual Studio
                 // Встановіть правильні шляхи до рішення/проекту та параметри MSBuild
-                bat '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" task4.sln /t:Build /p:Configuration=Release'
+                bat '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe" Task4.sln /t:Build /p:Configuration=Release'
             }
         }
 
         stage('Test') {
             steps {
                 // Команди для запуску тестів
-                bat "x64\\Release\\task4.exe --gtest_output=xml:x64/Release/task4_report.xml"
+                bat "x64\\Release\\Task4.exe --gtest_output=xml:x64/Release/task4_report.xml"
             }
         }
     }
