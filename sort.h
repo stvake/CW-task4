@@ -11,7 +11,8 @@ void swap(char** a, char** b)
 
 void quick_sort(char** arr, size_t length)
 {
-    if (length < 2) return;
+    if (length < 2) 
+        return;
 
     char* pivot = arr[length / 2];
     size_t left = 0;
@@ -19,8 +20,11 @@ void quick_sort(char** arr, size_t length)
 
     while (left <= right)
     {
-        while (strcmpp(arr[left], pivot) < 0) left++;
-        while (strcmpp(arr[right], pivot) > 0) right--;
+        while (strcmpp(arr[left], pivot) < 0) 
+            left++;
+        
+        while (strcmpp(arr[right], pivot) > 0) 
+            right--;
 
         if (left <= right)
         {
@@ -30,8 +34,11 @@ void quick_sort(char** arr, size_t length)
         }
     }
 
-    if (right > 0) quick_sort(arr, right + 1);
-    if (left < length) quick_sort(arr + left, length - left);
+    if (right > 0) 
+        quick_sort(arr, right + 1);
+    
+    if (left < length) 
+        quick_sort(arr + left, length - left);
 }
 
 #endif // !SORT

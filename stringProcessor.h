@@ -11,20 +11,19 @@
 const size_t strlenn(const char* str)
 {
     const char* s = str;
-    while (*s != '\0') ++s;
+    while (*s != '\0') 
+        ++s;
     return s - str;
 }
 
 const int32_t get_str(const char const* msg, char* str, const int32_t limit)
 {
-    printf("%s", msg);
+    std::cout << msg << "\n";
     if (fgets(str, limit, stdin) != NULL)
     {
         size_t len = strlenn(str);
         if (len > 0 && str[len - 1] == '\n')
-        {
             str[len - 1] = '\0';
-        }
         return 0;
     }
     return -1;
@@ -35,7 +34,8 @@ void strcopy(char* fStr, char* sStr, size_t until)
     for (size_t i = 0; i < until; i++)
     {
         fStr[i] = sStr[i];
-        if (sStr[i] == '\0') break;
+        if (sStr[i] == '\0') 
+            break;
     }
 }
 
